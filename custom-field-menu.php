@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Custom Field Menu
-Plugin URL: http://agence-sba.com
+Plugin URL: http://clement-decou.olympe.in
 Description: Plugin ajout url pour un big menu
 Version: 1.0
 Author: Clément Décou
