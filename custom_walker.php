@@ -30,6 +30,11 @@ class cfm_walker extends Walker_Nav_Menu
           $classes = empty( $item->classes ) ? array() : (array) $item->classes;
           $classes[] = 'menu-item-' . $item->ID;
 
+          //Count menu item to apply Bootstrap Class
+          $bootstrap_number = 12/$args->menu->count;
+          $classes[] = 'col-md-'.$bootstrap_number;
+          $classes[] = 'no-padding';
+
           /**
            * Filter the CSS class(es) applied to a menu item's list item element.
            *
@@ -95,7 +100,8 @@ class cfm_walker extends Walker_Nav_Menu
           }
 
           $item_output = $args->before;
-          $item_output .= '<a'. $attributes .'>';
+          $item_output .= '<a class="hover-bg-second"'. $attributes .'>';
+          $item_output .= '<img class="cfm-img" src="'.$_CURRENT_URL_SUBMENU.'" />';
           /** This filter is documented in wp-includes/post-template.php */
           $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
           $item_output .= '</a>';
